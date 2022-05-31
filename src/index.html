@@ -9,17 +9,38 @@
     <link rel="stylesheet" href="" />
   </head>
   <body>
-    <header class="header">
-      <img class="logo" src="./assets/images/logo.svg" alt="logo" /> 
+    <header class="header" >
+      <div class="box-header">
+        <img class="logo" src="./assets/images/logo.svg" alt="logo" />
+      </div> 
     </header>
 
-    <main id="main"></main>
+    <main id="main" class="main">
+      <section id="action-page" class="action-page">
+        <p class="parr-action">¿ Que acción desea realizar ?</p>
+        <div class="btn-group">
+          <button type="button" class="btn" disabled>
+            <span class="iconify" data-icon="icon-park-solid:buy" style="color: #852511; font-size: 40px;"></span>
+            <p class="btn-text">Seguir Comprando</p>
+          </button>
+          <button type="button" class="btn">
+            <span class="iconify" data-icon="mdi:contactless-payment-circle" style="color: #852511; font-size: 40px;"></span>
+            <p class="btn-text">Ir a Pagar</p>
+          </button>
+        </div>
+      </section>
 
-    <footer>
+      <section id="form-page" class="form-page">
+        
+      </section>
+    </main>
+
+    <footer class="footer">
       <address>
         © 2021 Hecho con amor por Andu15 - v2 
       </address>
     </footer>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="index.js" type="module"></script>
   </body>
 </html>

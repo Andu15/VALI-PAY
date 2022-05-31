@@ -60,10 +60,77 @@ table {
 }
 
 /* start styles */
-.header {
 
+/* header styles */
+.header {
+  height: 6em;
+  background-color: var(--soft-brown);
+}
+
+.box-header {
+  width: 100%;
+  height: 85%;
+  background-color: var(--dark-brown);
 }
 
 .logo {
+  height: 90%;
+}
 
+/* main styles */
+.main {
+  width: 80%;
+  margin: 5em auto 0;
+  font-family: 'Roboto Serif';
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.action-page {
+  /* text-align: center; */
+}
+
+.parr-action {
+  text-align: center;
+  color: var(--soft-black);
+  font-style: normal;
+  margin: 2em 0;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 2em;
+  width: 70%;
+  margin: 3em auto;
+}
+
+.btn {
+  border-radius: 15px;
+  background-color: var(--mustard);
+  border: none;
+  height: 3em;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.btn-text {
+  margin: auto;
+  color: var(--soft-brown);
+}
+
+
+/* footer styles */
+.footer {
+  position:fixed;
+  left:15px; 
+  bottom:0px;
+  height:30px;
+  width:100%;
+  color: var(--dark-brown);
 }
