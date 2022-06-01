@@ -57,6 +57,9 @@ table {
   --soft-black: #151414;
   --mustard: #F9C478;
   --soft-mustard: #F7CF95;
+  --fill-modal: #F5EAE6;
+  --font-size-sm: 20px;
+  --font-size-md: 30px;
 }
 
 /* start styles */
@@ -82,7 +85,7 @@ table {
   width: 80%;
   margin: 5em auto 0;
   font-family: 'Roboto Serif';
-  font-size: 22px;
+  font-size: var(--font-size-sm);
   font-weight: bold;
 }
 
@@ -112,7 +115,7 @@ table {
   background-color: var(--mustard);
   border: none;
   height: 3em;
-  font-size: 20px;
+  font-size: var(--font-size-sm);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,6 +127,10 @@ table {
   color: var(--soft-brown);
 }
 
+/* form styles */
+.form-page {
+
+}
 
 /* footer styles */
 .footer {
@@ -133,4 +140,14 @@ table {
   height:30px;
   width:100%;
   color: var(--dark-brown);
+}
+
+@media (min-width: 407px) {
+  .main {
+    width: 85%;
+    font-size: var(--font-size-md);
+  }
+  .btn-text {
+    font-size: var(--font-size-md);
+  }
 }
