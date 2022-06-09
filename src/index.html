@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vali-pay</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
     <header class="header" >
@@ -17,14 +18,14 @@
 
     <main id="main" class="main">
       <section id="action-page">
-        <article>
+        <article id="action-page-content">
           <p class="">¿ Que acción desea realizar ?</p>
           <div class="">
-            <button type="button" class="" disabled>
+            <button type="button" class="btn btn-dark" disabled>
               <span class="iconify" data-icon="icon-park-solid:buy" style="color: #852511; font-size: 40px;"></span>
               <p class="">Seguir Comprando</p>
             </button>
-            <button id="btn-pay" type="button" class="">
+            <button id="btn-pay" type="button" class="btn btn-dark" >
               <span class="iconify" data-icon="mdi:contactless-payment-circle" style="color: #852511; font-size: 40px;"></span>
               <p class="">Ir a Pagar</p>
             </button>
@@ -32,37 +33,87 @@
         </article>
       </section>
 
-      <section id="form-page">
-        <form>
-          <div>
+      <section
+        id="form-page"
+        class="hidden"
+        >
+        <form id="form">
+          <div id="errors-info"></div>
+          <div class="">
             <span class="iconify" data-icon="bi:credit-card-2-back-fill" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="text" id="card-number" name="card-number" placeholder="Número de tarjeta">
+            <div class="form-floating">
+              <input type="text" id="card-number" name="card-number" placeholder="Número de tarjeta" class="form-control" required minlength="16" pattern="^[1-9]\d*$" title="Solo debes ingresar los 16 digitos de tu tarjeta">
+              <label for="card-number">Número de tarjeta</label>
+            </div>
+            <span name="card-number"></span>
           </div>
           <div>
             <span class="iconify" data-icon="bi:calendar-week-fill" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/AA">
+            <div class="form-floating" >
+              <select id="card-month" name="card-month" class="form-select" placeholder="MM" required>
+                <option value="0" selected></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <label for="card-month">MM</label>
+            </div>
+          </div>
+          <div>
+            <span class="iconify" data-icon="bi:calendar-week-fill" style="color: #f7cf95; font-size: 40px;"></span>
+            <div class="form-floating">
+              <select id="card-year" name="card-year" class="form-select" placeholder="YY" required>
+                <option value="0"></option>
+              </select>
+              <label for="card-year">YYYY</label>
+            </div>
           </div>
           <div>
             <span class="iconify" data-icon="bi:key-fill" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="number" id="cvv" name="cvv" placeholder="CVV">
+            <div class="form-floating">
+              <input type="text" id="cvv" name="cvv" placeholder="CVV" class="form-control" required pattern="^[0-9]\d{2}$" title="Solo acepta 3 digitos del 0 al 9">
+              <label for="cvv">CVV</label>
+            </div>
           </div>
           <div>
             <span class="iconify" data-icon="wpf:name" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="text" id="card-name" name="card-name" placeholder="Nombres">
+            <div class="form-floating">
+              <input type="text" id="card-name" name="card-name" placeholder="Nombres" class="form-control" required pattern="^[a-zA-Z]\w*$" title="Formato válido: solo un nombre y sin espacios">
+              <label for="card-name">Primer Nombre</label>
+            </div>
           </div>
           <div>
             <span class="iconify" data-icon="wpf:name" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="text" id="card-lastname" name="card-lastname" placeholder="Apellidos">
+            <div class="form-floating">
+              <input type="text" id="card-lastname" name="card-lastname" placeholder="Apellidos" class="form-control" required pattern="^[a-zA-Z]\w*$" title="Formato válido: solo un apellido y sin espacios">
+              <label for="card-lastname">Primer Apellido</label>
+            </div>
           </div>
-          <div>
+          <div class="">
             <span class="iconify" data-icon="eva:email-fill" style="color: #f7cf95; font-size: 40px;"></span>
-            <input type="text" id="email" name="email" placeholder="Correo electrónico">
+            <div class="form-floating">
+              <input type="text" id="email" name="email" placeholder="Correo electrónico" class="form-control" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" title="email inválido">
+              <label for="email">Correo electrónico</label>
+            </div>
           </div>
-          <input type="submit" value="Pagar">
+          <button id="confirm-pay" class="btn btn-dark" type="submit">Pagar</button>
         </form>
       </section>
 
-      <section id="result-page"><p>PRUEBA</p></section>
+      <section
+        id="result-page"
+        class="hidden"
+        >
+      </section>
     </main>
 
     <footer class="footer">
@@ -71,6 +122,8 @@
       </address>
     </footer>
 
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="index.js" type="module"></script>
   </body>
