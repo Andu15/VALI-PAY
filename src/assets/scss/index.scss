@@ -1,0 +1,122 @@
+@import './variables';
+@import './actionPage.scss';
+@import './form-page.scss';
+@import './loading-page.scss';
+@import './result-page.scss';
+
+/* clean css styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+  position: relative;
+  padding-bottom: 4em;
+  min-height: 100vh;;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* No olvides definir estilos para focus */
+:focus {
+  outline: 0;
+}
+
+/* No olvides resaltar de alguna manera el texto insertado/borrado */
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+/* En el código HTML es necesario añadir cellspacing="0" */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+// general styles
+.hidden { 
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+
+
+/* header styles */
+.header {
+  position:relative;
+  z-index:1;
+  .box-header {
+    height: 85%;
+    position:absolute;
+    z-index:2;
+    .logo {
+      height: 80%;
+    }
+  }
+}
+
+/* main styles */
+.main {
+  width: 80%;
+  margin: 0 auto;
+  font-family: $font-family-roboto;
+}
+
+/* footer styles */
+.footer {
+  position:absolute;
+  // padding: 4em 0;
+  left:10px; 
+  bottom:0;
+  color: $color-dark-brown;
+  font-family: $font-family-roboto;
+  font-size: $font-size-base;
+}
+
+
+/* Media Queries */
+@media (min-width: $screen-lg) {
+  .header {
+    height: 7em;
+    background-color: $color-soft-brown;
+    }
+    &.box-header {
+      background-color: $color-dark-brown;
+      height: 6em;
+      width: 100%;
+    }
+    &.waves {
+      display: none;
+    }
+  }

@@ -3,11 +3,12 @@
 // sections
 const actionPage = document.querySelector('#action-page');
 const formPage = document.querySelector('#form-page');
+const loadingPage = document.querySelector('#loading-page');
 const resultPage = document.querySelector('#result-page');
 
 // btns
 const btnPay = document.querySelector('#btn-pay');
-const btnConfirmPay = document.querySelector('#confirm-pay');
+// const btnConfirmPay = document.querySelector('#confirm-pay');
 
 // targets
 const form = document.querySelector('#form');
@@ -20,17 +21,40 @@ const cardName = document.querySelector('#card-name');
 const cardLastname = document.querySelector('#card-lastname');
 const email = document.querySelector('#email');
 
+// variables
+const formObject = [];
+
 // actions
 function toggleElement(target1, target2, prop1, prop2) {
   target1.classList.toggle(prop1);
   target2.classList.toggle(prop2);
 }
 
+// function by stop spinner
+function stopSpinner() {
+  const timer = setTimeout(() => toggleElement(loadingPage, resultPage, 'hidden', 'hidden'), 2000);
+  return () => clearTimeout(timer);
+}
+
 // successful form
 function submitForm() {
+  const formResult = {
+    cardNumber: cardNumber.value,
+    cardMonth: cardMonth.value,
+    cardYear: cardYear.value,
+    cvv: cvv.value,
+    cardName: cardName.value,
+    cardLastname: cardLastname.value,
+    email: email.value,
+  };
+
   form.reset();
-  toggleElement(formPage, resultPage, 'visible', 'hidden');
-  console.log(cardNumber.value, cardMonth.value, cardYear.value, cvv.value, cardName.value, cardLastname.value, email.value);
+
+  toggleElement(formPage, loadingPage, 'visible', 'hidden');
+
+  stopSpinner();
+
+  formObject.push(formResult);
 }
 
 // validate form
@@ -48,11 +72,17 @@ function validateForm(event) {
   }
 
   if (!errors.length) {
-    console.log('no hay errores');
+    console.log('no hay errores en el form');
     submitForm();
   } else {
-    console.log('hay errores');
-    const result = errors.map((error) => `<span>${Object.values(error)}</span>`);
+    const result = errors.map((error) => {
+      // console.log(error);
+      // console.log(typeof(error));
+      // console.log(Object.values(error).join());
+      // console.log(Object.values(error).join(''));
+      console.log(Object.values(error).join(','));
+      return `<span>${Object.values(error)}</span><br/>`;
+    });
     errorsInfo.innerHTML = result;
   }
 }

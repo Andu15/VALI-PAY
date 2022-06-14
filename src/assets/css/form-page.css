@@ -1,0 +1,62 @@
+/* variables */
+.form-page {
+  width: 80%;
+  margin: 3em auto; }
+  .form-page .errors-info {
+    background: #360C07;
+    color: #F5EAE6;
+    margin-bottom: 20px; }
+  .form-page .input-el {
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 2px solid #F9C478;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px; }
+    .form-page .input-el .input-edit {
+      border: 0;
+      outline: none;
+      color: #F9C478;
+      box-shadow: none; }
+  .form-page .select-el {
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 2px solid #F9C478;
+    display: grid;
+    grid-template-columns: [row1-start] 20% [row1-end] 80%;
+    margin-bottom: 20px;
+    justify-items: center;
+    align-items: center; }
+    .form-page .select-el .icon-calendar {
+      width: 60%; }
+    .form-page .select-el .select-container {
+      width: 100%; }
+      .form-page .select-el .select-container .select-edit {
+        border: 0;
+        outline: none;
+        color: #F9C478;
+        box-shadow: none; }
+  .form-page .btn-main-pay {
+    border-radius: 15px;
+    width: 100%;
+    background-color: #F9C478;
+    color: #852511;
+    font-size: 1.5rem;
+    margin: auto; }
+    .form-page .btn-main-pay:hover {
+      background-color: #F9C478;
+      border: none;
+      font-size: 1.875rem;
+      color: #F5EAE6; }
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .form-page {
+    width: 50%;
+    margin: 3em auto; } }
+
+@media (min-width: 1280px) {
+  .form-page {
+    margin: 5em auto; } }

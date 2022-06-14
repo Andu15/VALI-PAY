@@ -1,0 +1,93 @@
+@import './variables';
+
+.action-page-content {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  align-content:center;
+  .action-page-content__title {
+    text-align: center;
+    font-weight: bolder;
+    font-size: $font-size-xl;
+    margin: auto;
+  }
+  .btns-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    margin: 3em 0;
+    .btn-type {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      align-content:center;
+      font-size: $font-size-lg;
+      background-color: $color-mustard;
+      height: 4em;
+      color: $color-soft-brown;
+      margin-bottom: 30px;
+      &:hover{
+        transform: scale(1.1);
+      }
+      .action-section__btn--buy {
+        margin:auto;
+        opacity: 0.5;
+      }
+      .action-section__btn--pay {
+        margin:auto;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+@media (min-width: $screen-sm) {
+  .action-page-content {
+    .btns-section {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .action-page-content {
+    margin-top: 10em;
+    .btns-section {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .action-page-content {
+    .action-page-content__title {
+      font-size: $font-size-2xl;
+    }
+    .btns-section {
+      width: 70%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+      .btn-type {
+        width: 40%;
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .action-page-content {
+    .btns-section {
+      width: 50%;
+    }
+  }
+}

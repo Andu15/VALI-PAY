@@ -1,0 +1,68 @@
+/* variables */
+.action-page-content {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+  .action-page-content .action-page-content__title {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin: auto; }
+  .action-page-content .btns-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 3em 0; }
+    .action-page-content .btns-section .btn-type {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      font-size: 1.125rem;
+      background-color: #F9C478;
+      height: 4em;
+      color: #852511;
+      margin-bottom: 30px; }
+      .action-page-content .btns-section .btn-type:hover {
+        transform: scale(1.1); }
+      .action-page-content .btns-section .btn-type .action-section__btn--buy {
+        margin: auto;
+        opacity: 0.5; }
+      .action-page-content .btns-section .btn-type .action-section__btn--pay {
+        margin: auto; }
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .action-page-content .btns-section {
+    width: 50%; } }
+
+@media (min-width: 768px) {
+  .action-page-content {
+    margin-top: 10em; }
+    .action-page-content .btns-section {
+      width: 50%; } }
+
+@media (min-width: 1024px) {
+  .action-page-content .action-page-content__title {
+    font-size: 1.875rem; }
+  .action-page-content .btns-section {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly; }
+    .action-page-content .btns-section .btn-type {
+      width: 40%;
+      margin-top: 2em; } }
+
+@media (min-width: 1280px) {
+  .action-page-content .btns-section {
+    width: 50%; } }

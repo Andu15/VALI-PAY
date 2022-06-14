@@ -1,0 +1,78 @@
+@import './variables';
+
+.form-page {
+  width: 80%;
+  margin: 3em auto;
+  .errors-info {
+    background: $color-dark-brown;
+    color: $color-fill-modal;
+    margin-bottom: 20px;
+  }
+  .input-el {
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 2px solid $color-mustard;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    .input-edit {
+      border: 0;
+      outline: none;
+      color: $color-mustard;
+      box-shadow: none;
+    }
+  }
+  .select-el {
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 2px solid $color-mustard;
+    display: grid;
+    grid-template-columns: [row1-start] 20% [row1-end] 80%;
+    margin-bottom: 20px;
+    justify-items: center;
+    align-items: center;
+    .icon-calendar {
+      width: 60%;
+    }
+    .select-container {
+      width: 100%;
+      .select-edit {
+        border: 0;
+        outline: none;
+        color: $color-mustard;
+        box-shadow: none;
+      }
+    }
+
+  }
+  .btn-main-pay {
+    border-radius: 15px;
+    width:100%;
+    background-color: $color-mustard;
+    color: $color-soft-brown;
+    font-size: $font-size-xl;
+    margin: auto;
+    &:hover {
+      background-color: $color-mustard;
+      border: none;
+      font-size: $font-size-2xl;
+      color: $color-fill-modal;
+    }
+  }
+}
+
+/* Media Queries */
+@media (min-width: $screen-sm) {
+  .form-page {
+    width: 50%;
+    margin: 3em auto;
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .form-page {
+    margin: 5em auto;
+  }
+}
