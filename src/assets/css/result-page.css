@@ -1,0 +1,22 @@
+/* variables */
+.result-page .result-page-content .card {
+  display: flex;
+  justify-content: center; }
+  .result-page .result-page-content .card .card-container {
+    background: linear-gradient(90deg, #F7CF95 0%, #F9C478 35.63%, #EC9154 72.79%, rgba(228, 100, 54, 0.78) 97.74%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    padding: 20px 15px; }
+    .result-page .result-page-content .card .card-container .top-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .result-page .result-page-content .card .card-container .cardNumber-container {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .result-page .result-page-content .card .card-container .card-data {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; }

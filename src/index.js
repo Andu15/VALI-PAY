@@ -1,4 +1,5 @@
-// import validator from './validator';
+// eslint-disable-next-line import/extensions
+import validator from './validator.js';
 
 // sections
 const actionPage = document.querySelector('#action-page');
@@ -8,7 +9,6 @@ const resultPage = document.querySelector('#result-page');
 
 // btns
 const btnPay = document.querySelector('#btn-pay');
-// const btnConfirmPay = document.querySelector('#confirm-pay');
 
 // targets
 const form = document.querySelector('#form');
@@ -20,14 +20,56 @@ const cvv = document.querySelector('#cvv');
 const cardName = document.querySelector('#card-name');
 const cardLastname = document.querySelector('#card-lastname');
 const email = document.querySelector('#email');
-
-// variables
-const formObject = [];
+const iconResult = document.querySelector('#icon-result');
+// const brand = document.querySelector('#brand');
+const cardNumberText = document.querySelector('#cardNumber-text');
+const nameCardText = document.querySelector('#nameCard-text');
+const cardDataExp = document.querySelector('#card-data-exp');
 
 // actions
 function toggleElement(target1, target2, prop1, prop2) {
   target1.classList.toggle(prop1);
   target2.classList.toggle(prop2);
+}
+
+// get elements e insert data
+function getData(data) {
+  const {
+    isValid,
+    maskify,
+    getIssuer,
+  } = validator;
+
+  const {
+    cardNumberInput,
+    cardMonthInput,
+    cardYearInput,
+    // cvvInput,
+    cardNameInput,
+    cardLastnameInput,
+    // emailInput,
+  } = data;
+
+  getIssuer(cardNumberInput);
+
+  cardNumberText.textContent = maskify(cardNumberInput);
+  nameCardText.textContent = `${cardNameInput.toUpperCase()} ${cardLastnameInput.toUpperCase()}`;
+  cardDataExp.textContent = `${cardMonthInput}/${cardYearInput.slice(2)}`;
+
+  const isValidCard = isValid(cardNumberInput);
+  if (!isValidCard) {
+    iconResult.innerHTML = `
+      <div>
+        <span class="iconify" data-icon="bxs:error-circle" style="color: #852511; font-size: 40px;"></span>
+        <p>Hubo un error</p>
+      </div>`;
+  } else {
+    iconResult.innerHTML = `
+      <div>
+        <span class="iconify" data-icon="ant-design:check-circle-filled" style="color: #f9c478; font-size: 40px;"></span>
+        <p> Felicidades ! </p>
+      </div>`;
+  }
 }
 
 // function by stop spinner
@@ -39,22 +81,22 @@ function stopSpinner() {
 // successful form
 function submitForm() {
   const formResult = {
-    cardNumber: cardNumber.value,
-    cardMonth: cardMonth.value,
-    cardYear: cardYear.value,
-    cvv: cvv.value,
-    cardName: cardName.value,
-    cardLastname: cardLastname.value,
-    email: email.value,
+    cardNumberInput: cardNumber.value,
+    cardMonthInput: cardMonth.value,
+    cardYearInput: cardYear.value,
+    cvvInput: cvv.value,
+    cardNameInput: cardName.value,
+    cardLastnameInput: cardLastname.value,
+    emailInput: email.value,
   };
 
   form.reset();
 
   toggleElement(formPage, loadingPage, 'visible', 'hidden');
 
-  stopSpinner();
+  getData(formResult);
 
-  formObject.push(formResult);
+  stopSpinner();
 }
 
 // validate form
@@ -72,17 +114,10 @@ function validateForm(event) {
   }
 
   if (!errors.length) {
-    console.log('no hay errores en el form');
+    // console.log('no hay errores en el form');
     submitForm();
   } else {
-    const result = errors.map((error) => {
-      // console.log(error);
-      // console.log(typeof(error));
-      // console.log(Object.values(error).join());
-      // console.log(Object.values(error).join(''));
-      console.log(Object.values(error).join(','));
-      return `<span>${Object.values(error)}</span><br/>`;
-    });
+    const result = errors.map((error) => `<span>${Object.values(error)}</span><br/>`);
     errorsInfo.innerHTML = result;
   }
 }
@@ -97,6 +132,7 @@ const currentYear = currentDate.getFullYear();
 const yearsAhead = currentYear + 10;
 
 function loadYears() {
+  // eslint-disable-next-line no-plusplus
   for (let i = currentYear; i <= yearsAhead; i++) {
     const optionElement = document.createElement('option');
     optionElement.value = i;
