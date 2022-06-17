@@ -1,22 +1,211 @@
 /* variables */
-.result-page .result-page-content .card {
-  display: flex;
-  justify-content: center; }
-  .result-page .result-page-content .card .card-container {
-    background: linear-gradient(90deg, #F7CF95 0%, #F9C478 35.63%, #EC9154 72.79%, rgba(228, 100, 54, 0.78) 97.74%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
-    padding: 20px 15px; }
-    .result-page .result-page-content .card .card-container .top-card {
+.result-page .result-page-content .icon-result {
+  text-align: center;
+  margin: 2em 0; }
+  .result-page .result-page-content .icon-result .icon-result--text {
+    font-size: 1.125rem; }
+
+.result-page .result-page-content .card .card-container {
+  background: linear-gradient(90deg, #F7CF95 0%, #F9C478 35.63%, #EC9154 72.79%, rgba(228, 100, 54, 0.78) 97.74%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  padding: 15px 10px; }
+  .result-page .result-page-content .card .card-container .top-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .result-page .result-page-content .card .card-container .top-card .chip {
+      width: 40px; }
+    .result-page .result-page-content .card .card-container .top-card .brand {
+      width: 50px;
+      margin: auto 0 12px 0; }
+      .result-page .result-page-content .card .card-container .top-card .brand .brand-logo {
+        width: inherit; }
+  .result-page .result-page-content .card .card-container .cardNumber-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #F5EAE6;
+    margin-top: 1em; }
+  .result-page .result-page-content .card .card-container .card-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F5EAE6;
+    margin-top: 0.5em; }
+    .result-page .result-page-content .card .card-container .card-data .nameCard-text {
+      font-size: 1rem;
+      font-weight: 700; }
+    .result-page .result-page-content .card .card-container .card-data .expiration-container {
       display: flex;
-      justify-content: space-between;
-      align-items: center; }
-    .result-page .result-page-content .card .card-container .cardNumber-container {
-      display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center; }
-    .result-page .result-page-content .card .card-container .card-data {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; }
+      align-items: inherit;
+      align-content: center;
+      column-gap: 0px; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-title {
+        margin: 0;
+        font-size: 0.875rem; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-exp {
+        font-size: 1rem; }
+
+.result-page .result-page-content .information-result {
+  margin: 2em auto;
+  width: 80%;
+  text-align: center;
+  font-size: 1rem; }
+  .result-page .result-page-content .information-result .information-result--sub {
+    color: #151414;
+    text-align: center;
+    margin: 1em auto; }
+  .result-page .result-page-content .information-result .btn-return {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #F9C478;
+    border-radius: 15px;
+    margin: 1em auto;
+    padding: 0.8em; }
+    .result-page .result-page-content .information-result .btn-return:hover {
+      transform: scale(1.1); }
+  .result-page .result-page-content .information-result .information-result--text {
+    color: #852511;
+    margin: auto; }
+
+/* Media Queries */
+@media (min-width: 411px) {
+  .result-page .result-page-content {
+    width: 90%;
+    margin: 3em auto; } }
+
+@media (min-width: 500px) {
+  .result-page .result-page-content {
+    width: 80%; }
+    .result-page .result-page-content .icon-result .icon-result--text {
+      font-size: 1.5rem; }
+    .result-page .result-page-content .card .card-container {
+      padding: 20px 15px; }
+      .result-page .result-page-content .card .card-container .top-card .chip {
+        width: 50px; }
+      .result-page .result-page-content .card .card-container .top-card .brand {
+        width: 60px; }
+      .result-page .result-page-content .card .card-container .cardNumber-container {
+        font-size: 1.125rem; }
+      .result-page .result-page-content .card .card-container .card-data .nameCard-text {
+        font-size: 1.125rem;
+        font-weight: bold; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-title {
+        font-size: 1rem; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-exp {
+        font-size: 1.125rem; }
+    .result-page .result-page-content .information-result {
+      margin: 2.5em auto;
+      font-size: 1.125rem; }
+      .result-page .result-page-content .information-result .information-result--sub {
+        margin: 2em auto; }
+      .result-page .result-page-content .information-result .btn-return {
+        padding: 1em; } }
+
+@media (min-width: 640px) {
+  .result-page .result-page-content {
+    width: 70%; }
+    .result-page .result-page-content .icon-result .icon-result--text {
+      font-size: 1.875rem; }
+    .result-page .result-page-content .card .card-container .top-card .chip {
+      width: 60px; }
+    .result-page .result-page-content .card .card-container .top-card .brand {
+      width: 70px; }
+    .result-page .result-page-content .card .card-container .cardNumber-container {
+      font-size: 1.5rem; }
+    .result-page .result-page-content .card .card-container .card-data .nameCard-text {
+      font-size: 1.5rem;
+      font-weight: bold; }
+    .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-title {
+      font-size: 1.125rem; }
+    .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-exp {
+      font-size: 1.5rem; }
+    .result-page .result-page-content .information-result {
+      margin: 2.5em auto;
+      font-size: 1.5rem; }
+      .result-page .result-page-content .information-result .information-result--sub {
+        margin: 2em auto; }
+      .result-page .result-page-content .information-result .btn-return {
+        padding: 1em; }
+      .result-page .result-page-content .information-result .information-result--text {
+        font-size: 1.5rem; } }
+
+@media (min-width: 900px) {
+  .result-page .result-page-content {
+    width: 60%; }
+    .result-page .result-page-content .icon-result .icon-result--text {
+      font-size: 1.875rem; }
+    .result-page .result-page-content .card .card-container {
+      padding: 30px 25px; }
+      .result-page .result-page-content .card .card-container .top-card .chip {
+        width: 70px; }
+      .result-page .result-page-content .card .card-container .top-card .brand {
+        width: 90px; }
+      .result-page .result-page-content .card .card-container .cardNumber-container {
+        font-size: 1.875rem; }
+      .result-page .result-page-content .card .card-container .card-data .nameCard-text {
+        font-size: 1.875rem; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-title {
+        font-size: 1.5rem; }
+      .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-exp {
+        font-size: 1.875rem; }
+    .result-page .result-page-content .information-result {
+      font-size: 1.875rem; }
+      .result-page .result-page-content .information-result .btn-return {
+        padding: 1.5em; }
+      .result-page .result-page-content .information-result .information-result--text {
+        font-size: 1.875rem; } }
+
+@media (min-width: 1024px) {
+  .result-page .result-page-content {
+    width: 55%; }
+    .result-page .result-page-content .icon-result {
+      margin-top: 4em; }
+      .result-page .result-page-content .icon-result .icon-result--text {
+        font-size: 2.25rem; }
+    .result-page .result-page-content .card .card-container .top-card .chip {
+      width: 80px; }
+    .result-page .result-page-content .card .card-container .top-card .brand {
+      width: 100px; }
+    .result-page .result-page-content .card .card-container .cardNumber-container {
+      font-size: 1.875rem; }
+    .result-page .result-page-content .card .card-container .card-data .nameCard-text {
+      font-size: 1.875rem; }
+    .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-title {
+      font-size: 1.5rem; }
+    .result-page .result-page-content .card .card-container .card-data .expiration-container .card-data-exp {
+      font-size: 1.875rem; }
+    .result-page .result-page-content .information-result {
+      font-size: 1.875rem; }
+      .result-page .result-page-content .information-result .information-result--sub {
+        margin: 2.5em auto; }
+      .result-page .result-page-content .information-result .information-result--text {
+        font-size: 1.875rem; } }
+
+@media (min-width: 1440px) {
+  .result-page .result-page-content {
+    width: 50%; } }
+
+@media (min-width: 1636px) {
+  .result-page .result-page-content {
+    width: 40%; }
+    .result-page .result-page-content .card .card-container .top-card .chip {
+      width: 90px; }
+    .result-page .result-page-content .card .card-container .top-card .brand {
+      width: 120px; } }
+
+@media (min-width: 2000px) {
+  .result-page .result-page-content {
+    width: 40%; } }
+
+@media (min-width: 2560px) {
+  .result-page .result-page-content {
+    margin-top: 10em;
+    width: 30%; } }

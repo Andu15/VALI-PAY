@@ -2,31 +2,363 @@
 
 .result-page {
   .result-page-content {
+    .icon-result {
+      text-align: center;
+      margin: 2em 0;
+      .icon-result--text {
+        font-size: $font-size-lg;
+      }
+    }
     .card {
-      display: flex;
-      justify-content: center;
       .card-container {
         background: linear-gradient(90deg, #F7CF95 0%, #F9C478 35.63%, #EC9154 72.79%, rgba(228, 100, 54, 0.78) 97.74%);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 7px;
-        padding: 20px 15px;
+        padding: 15px 10px;
         .top-card {
           display: flex;
           justify-content:space-between;
           align-items: center;
+          .chip {
+            width: 40px;
+          }
+          .brand {
+            width: 50px;
+            margin: auto 0 12px 0;
+            .brand-logo {
+              width: inherit
+            }
+          }
         }
         .cardNumber-container {
           display: flex;
           justify-content: center;
           align-items: center;
+          font-size: $font-size-base;
+          color: $color-fill-modal;
+          margin-top: 1em;
         }
         .card-data {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          flex-wrap: wrap;
+          color: $color-fill-modal;
+          margin-top: 0.5em;
+          .nameCard-text {
+            font-size: $font-size-base;
+            font-weight: 700;
+          }
+          .expiration-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: inherit;
+            align-content: center;
+            column-gap: 0px;
+            .card-data-title {
+              margin: 0;
+              font-size: $font-size-sm;
+            }
+            .card-data-exp {
+              font-size: $font-size-base;
+            }
+          }
         }
       }
+    }
+    .information-result {
+      margin: 2em auto;
+      width: 80%;
+      text-align: center;
+      font-size: $font-size-base;
+      .information-result--sub {
+        color: $color-soft-black;
+        text-align: center;
+        margin: 1em auto;
+      }
+      .btn-return {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: $color-mustard;
+        border-radius: 15px;
+        margin: 1em auto;
+        padding: 0.8em;
+        &:hover{
+          transform: scale(1.1);
+        }
+      }
+      .information-result--text {
+        color: $color-soft-brown;
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+@media (min-width: 411px) {
+  .result-page {
+    .result-page-content {
+      width: 90%;
+      margin: 3em auto;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .result-page {
+    .result-page-content {
+      width: 80%;
+      .icon-result {
+        .icon-result--text {
+          font-size: $font-size-xl;
+        }
+      }
+      .card {
+        .card-container {
+          padding: 20px 15px;
+          .top-card {
+            .chip {
+              width: 50px;
+            }
+            .brand {
+              width: 60px;
+            }
+          }
+          .cardNumber-container {
+            font-size: $font-size-lg;
+          }
+          .card-data {
+            .nameCard-text {
+              font-size: $font-size-lg;
+              font-weight: bold;
+            }
+            .expiration-container {
+              .card-data-title {
+                font-size: $font-size-base;
+              }
+              .card-data-exp {
+                font-size: $font-size-lg;
+              }
+            }
+          }
+        }
+      }
+      .information-result {
+        margin: 2.5em auto;
+        font-size: $font-size-lg;
+        .information-result--sub {
+          margin: 2em auto;
+        }
+        .btn-return {
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .result-page {
+    .result-page-content {
+      width: 70%;
+      .icon-result {
+        .icon-result--text {
+          font-size: $font-size-2xl;
+        }
+      }
+      .card {
+        .card-container {
+          .top-card {
+            .chip {
+              width: 60px;
+            }
+            .brand {
+              width: 70px;
+            }
+          }
+          .cardNumber-container {
+            font-size: $font-size-xl;
+          }
+          .card-data {
+            .nameCard-text {
+              font-size: $font-size-xl;
+              font-weight: bold;
+            }
+            .expiration-container {
+              .card-data-title {
+                font-size: $font-size-lg;
+              }
+              .card-data-exp {
+                font-size: $font-size-xl;
+              }
+            }
+          }
+        }
+      }
+      .information-result {
+        margin: 2.5em auto;
+        font-size: $font-size-xl;
+        .information-result--sub {
+          margin: 2em auto;
+        }
+        .btn-return {
+          padding: 1em;
+        }
+        .information-result--text {
+          font-size: $font-size-xl;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .result-page {
+    .result-page-content {
+      width: 60%;
+      .icon-result {
+        .icon-result--text {
+          font-size: $font-size-2xl;
+        }
+      }
+      .card {
+        .card-container {
+          padding: 30px 25px;
+          .top-card {
+            .chip {
+              width: 70px;
+            }
+            .brand {
+              width: 90px;
+            }
+          }
+          .cardNumber-container {
+            font-size: $font-size-2xl;
+          }
+          .card-data {
+            .nameCard-text {
+              font-size: $font-size-2xl;
+            }
+            .expiration-container {
+              .card-data-title {
+                font-size: $font-size-xl;
+              }
+              .card-data-exp {
+                font-size: $font-size-2xl;
+              }
+            }
+          }
+        }
+      }
+      .information-result {
+        font-size: $font-size-2xl;
+        .btn-return {
+          padding: 1.5em;
+        }
+        .information-result--text {
+          font-size: $font-size-2xl;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .result-page {
+    .result-page-content {
+      width: 55%;
+      .icon-result {
+        margin-top: 4em;
+        .icon-result--text {
+          font-size: $font-size-3xl;
+        }
+      }
+      .card {
+        .card-container {
+          .top-card {
+            .chip {
+              width: 80px;
+            }
+            .brand {
+              width: 100px;
+            }
+          }
+          .cardNumber-container {
+            font-size: $font-size-2xl;
+          }
+          .card-data {
+            .nameCard-text {
+              font-size: $font-size-2xl;
+            }
+            .expiration-container {
+              .card-data-title {
+                font-size: $font-size-xl;
+              }
+              .card-data-exp {
+                font-size: $font-size-2xl;
+              }
+            }
+          }
+        }
+      }
+      .information-result {
+        font-size: $font-size-2xl;
+        .information-result--sub {
+          margin: 2.5em auto;
+        }
+        .information-result--text {
+          font-size: $font-size-2xl;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-2xl) {
+  .result-page {
+    .result-page-content {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $screen-3xl) {
+  .result-page {
+    .result-page-content {
+      width: 40%;
+      .card {
+        .card-container {
+          .top-card {
+            .chip {
+              width: 90px;
+            }
+            .brand {
+              width: 120px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-4xl) {
+  .result-page {
+    .result-page-content {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: $screen-5xl) {
+  .result-page {
+    .result-page-content {
+      margin-top: 10em;
+      width: 30%;
     }
   }
 }

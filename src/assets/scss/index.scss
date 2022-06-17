@@ -96,7 +96,6 @@ table {
 /* footer styles */
 .footer {
   position:absolute;
-  // padding: 4em 0;
   left:10px; 
   bottom:0;
   color: $color-dark-brown;
@@ -118,5 +117,8 @@ table {
     }
     &.waves {
       display: none;
+    }
+    .footer {
+      font-size: $font-size-lg;
     }
   }

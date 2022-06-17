@@ -18,23 +18,19 @@ const validator = {
     const isDivisibleByTen = sumTotalResult % 10 === 0;
     return isDivisibleByTen;
   },
-  // mostrando los ultimos digitos de la tarjeta
+  // showing the last digits of the card
   maskify: (creditCardNumber) => {
-    console.log(creditCardNumber);
     let maskingCardNumber = '';
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < creditCardNumber.length - 4; i++) {
       maskingCardNumber += '*';
     }
-    console.log(maskingCardNumber);
     const extractingLastFourDigits = creditCardNumber.slice(-4);
-    console.log(extractingLastFourDigits);
     maskingCardNumber = `${maskingCardNumber} ${extractingLastFourDigits}`;
-    console.log(maskingCardNumber);
     return maskingCardNumber;
   },
-  // mostrando el brand
+  // showing the brand
   getIssuer: (creditCardNumber) => {
-    console.log(creditCardNumber);
     let brandCard = '';
     if (creditCardNumber.match(/^3[47][0-9]{13}$/g)) {
       brandCard = 'American Express';
@@ -55,7 +51,6 @@ const validator = {
     } else {
       brandCard = 'NA';
     }
-    console.log(brandCard);
     return brandCard;
   },
 };
