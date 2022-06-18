@@ -1,5 +1,5 @@
 {
-  "name": "card-validation",
+  "name": "valipay",
   "version": "2.0.0",
   "description": "Aplicación web basado en el algoritmo de Luhn, que le permite al usuario validar el número de una tarjeta de crédito, con el plus de verificar el tipo de tarjeta ingresada",
   "main": "src/index.html",
