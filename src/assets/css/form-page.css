@@ -50,6 +50,11 @@
       border: none;
       font-size: 1.875rem;
       color: #F5EAE6; }
+    .form-page .btn-main-pay:focus {
+      background-color: #F9C478;
+      border: none;
+      font-size: 1.875rem;
+      color: #F5EAE6; }
 
 /* Media Queries */
 @media (min-width: 640px) {

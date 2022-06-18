@@ -60,6 +60,12 @@
       font-size: $font-size-2xl;
       color: $color-fill-modal;
     }
+    &:focus {
+      background-color: $color-mustard;
+      border: none;
+      font-size: $font-size-2xl;
+      color: $color-fill-modal;
+    }
   }
 }
 
